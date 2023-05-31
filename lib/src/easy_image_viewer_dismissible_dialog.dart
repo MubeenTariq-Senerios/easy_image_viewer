@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'dart:developer';
 import 'easy_image_provider.dart';
 import 'easy_image_view_pager.dart';
 
@@ -79,6 +79,7 @@ class _EasyImageViewerDismissibleDialogState
   Widget build(BuildContext context) {
     final popScopeAwareDialog = WillPopScope(
         onWillPop: () async {
+          log("onWillPop");
           _handleDismissal();
           return true;
         },
