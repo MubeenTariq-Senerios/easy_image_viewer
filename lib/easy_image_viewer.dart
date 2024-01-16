@@ -38,6 +38,8 @@ Future<Dialog?> showImageViewer(
     bool useSafeArea = false,
     bool swipeDismissible = false,
     bool doubleTapZoomable = false,
+      bool imageHeight = false,
+      double imageHeightValue = 0.0,
     Color backgroundColor = _defaultBackgroundColor,
     String closeButtonTooltip = _defaultCloseButtonTooltip,
     Color closeButtonColor = _defaultCloseButtonColor}) {
@@ -48,6 +50,8 @@ Future<Dialog?> showImageViewer(
       useSafeArea: useSafeArea,
       swipeDismissible: swipeDismissible,
       doubleTapZoomable: doubleTapZoomable,
+      imageHeight: imageHeight,
+      imageHeightValue: imageHeightValue,
       backgroundColor: backgroundColor,
       closeButtonTooltip: closeButtonTooltip,
       closeButtonColor: closeButtonColor);
@@ -74,6 +78,8 @@ Future<Dialog?> showImageViewerPager(
     bool useSafeArea = false,
     bool swipeDismissible = false,
     bool doubleTapZoomable = false,
+      bool imageHeight = false,
+      double imageHeightValue = 0.0,
     Color backgroundColor = _defaultBackgroundColor,
     String closeButtonTooltip = _defaultCloseButtonTooltip,
     Color closeButtonColor = _defaultCloseButtonColor,}) {
@@ -90,7 +96,7 @@ Future<Dialog?> showImageViewerPager(
       builder: (context) {
         return Center(
           child: SizedBox(
-            height: MediaQuery.of(context).size.height * 0.5,
+            height:imageHeight==true?imageHeightValue: MediaQuery.of(context).size.height * 0.5,
             child: EasyImageViewerDismissibleDialog(imageProvider,
                 immersive: immersive,
                 onPageChanged: onPageChanged,
